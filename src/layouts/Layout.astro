@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { title, description = "Mi CV y Portfolio personal" } = Astro.props;
+import { getAssetPath } from '../utils/paths';
 ---
 
 <!doctype html>
@@ -13,10 +14,9 @@ const { title, description = "Mi CV y Portfolio personal" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={getAssetPath('/favicon.svg')} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 bg-gradient-to-r text-white">

@@ -1,4 +1,7 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { getAssetPath } from '../utils/paths';
+---
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -101,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
                     dudas y yo la ayudo con las suyas.
                   </p>
                   <img 
-                    src="/Mejor_amiga.jpeg" 
+                    src={getAssetPath('/Mejor_amiga.jpeg')} 
                     alt="Foto de mi mejor amiga" 
                     class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-green-100 hover:border-green-300"
                   />
@@ -136,7 +139,7 @@ import Layout from "../layouts/Layout.astro";
                   la programacion en PHP, y mi mejor amiga hizo mi parte.
                 </p>
                 <img 
-                  src="/Fin_BA.png" 
+                  src={getAssetPath('/Fin_BA.png')} 
                   alt="Graduación Bachillerato Avanzado" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-green-100 hover:border-green-300"
                 />
@@ -170,7 +173,7 @@ import Layout from "../layouts/Layout.astro";
                   en la Universidad Politécnica de Querétaro en el grupo S-191.
                 </p>
                 <img 
-                  src="/S-191.jpeg" 
+                  src={getAssetPath('/S-191.jpeg')} 
                   alt="Grupo S-191 Universidad" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-emerald-100 hover:border-emerald-300"
                 />
@@ -206,7 +209,7 @@ import Layout from "../layouts/Layout.astro";
                   compañeros.
                 </p>
                 <img 
-                  src="/Inicio_clases.jpeg" 
+                  src={getAssetPath('/Inicio_clases.jpeg')} 
                   alt="Primeros días de clases" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-blue-100 hover:border-blue-300"
                 />
@@ -244,7 +247,7 @@ import Layout from "../layouts/Layout.astro";
                   Visité Huawei con mis compañeros de salón.
                 </p>
                 <img 
-                  src="Hawei.jpeg" 
+                  src={getAssetPath('/Hawei.jpeg')} 
                   alt="Visita a Huawei" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-purple-100 hover:border-purple-300"
                 />
@@ -280,7 +283,7 @@ import Layout from "../layouts/Layout.astro";
                   desarrollo.
                 </p>
                 <img 
-                  src="/Centro_expositor.jpg" 
+                  src={getAssetPath("/Centro_expositor.jpg")} 
                   alt="Centro Expositor - Proyecto Visus" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-orange-100 hover:border-orange-300"
                 />
@@ -316,7 +319,7 @@ import Layout from "../layouts/Layout.astro";
                   segundo lugar en un Hackathon.
                 </p>
                 <img 
-                  src="/Continental.jpg" 
+                  src={getAssetPath("/Continental.jpg")} 
                   alt="Hackathon Continental - 2º Lugar" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-red-100 hover:border-red-300"
                 />
@@ -350,7 +353,7 @@ import Layout from "../layouts/Layout.astro";
                   había anticipado.
                 </p>
                 <img 
-                  src="/Primer_trabajo.jpeg" 
+                  src={getAssetPath("/Primer_trabajo.jpeg")} 
                   alt="Mi primer empleo como desarrollador" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-teal-100 hover:border-teal-300"
                 />
@@ -383,7 +386,7 @@ import Layout from "../layouts/Layout.astro";
                   desarrollo ágil, pero ganamos una subcategoría de SauceLabs.
                 </p>
                 <img 
-                  src="/Troyano.jpg" 
+                  src={getAssetPath("/Troyano.jpg")} 
                   alt="Hackathon TROYANO - SauceLabs" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-indigo-100 hover:border-indigo-300"
                 />
@@ -416,7 +419,7 @@ import Layout from "../layouts/Layout.astro";
                   sostenible.
                 </p>
                 <img 
-                  src="/Enerhack.jpeg" 
+                  src={getAssetPath("/Enerhack.jpeg")} 
                   alt="Hackathon Enerhack - Desarrollo Sostenible" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-pink-100 hover:border-pink-300"
                 />
@@ -451,7 +454,7 @@ import Layout from "../layouts/Layout.astro";
                   Fui a Google como premio de asistencia.
                 </p>
                 <img 
-                  src="/Queretaro_digital.jpeg" 
+                  src={getAssetPath("/Queretaro_digital.jpeg")} 
                   alt="Hackathon Querétaro Digital - Visita a Google" 
                   class="w-full max-w-md mx-auto mt-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 border-4 border-pink-100 hover:border-pink-300"
                 />
