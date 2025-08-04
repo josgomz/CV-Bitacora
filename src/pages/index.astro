@@ -1,16 +1,103 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
 
+// Datos de ejemplo - puedes personalizar estos valores
+const personalInfo = {
+  name: "José Antonio Gómez Lira",
+  title: "Desarrollador Backend",
+  description:
+    "Desarrollador, lleno de energía, persona pro activa, organizada, responsable, y autodidacta, interés en la creación de soluciones web innovadoras y eficientes. Especializado en tecnologías modernas y siempre en búsqueda de nuevos desafíos. Especializado en desarrollo backend con Laravel, Node.js, Python y bases de datos relacionales. Experiencia en frontend moderno con React, TypeScript y frameworks CSS. Enfoque en metodologías ágiles y desarrollo de soluciones escalables.",
+  image: "/Foto.jpg",
+};
+
+const skills = [
+  // Frontend
+  { name: "JavaScript", level: 4, category: "Frontend" },
+  { name: "TypeScript", level: 4, category: "Frontend" },
+  { name: "React", level: 4, category: "Frontend" },
+  { name: "Astro", level: 3, category: "Frontend" },
+  { name: "HTML/CSS", level: 5, category: "Frontend" },
+
+  // Backend
+  { name: "Node.js", level: 4, category: "Backend" },
+  { name: "Python", level: 3, category: "Backend" },
+  { name: "Express.js", level: 4, category: "Backend" },
+  { name: "MongoDB", level: 3, category: "Backend" },
+  { name: "PostgreSQL", level: 3, category: "Backend" },
+
+  // Herramientas
+  { name: "Git", level: 4, category: "Herramientas" },
+  { name: "Docker", level: 3, category: "Herramientas" },
+  { name: "VS Code", level: 5, category: "Herramientas" },
+  { name: "Linux", level: 3, category: "Herramientas" },
+
+  // Idiomas
+  { name: "Español (Nativo)", level: 5, category: "Idiomas" },
+  { name: "Inglés (B2)", level: 4, category: "Idiomas" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Mi CV - Portfolio"
+  description="Portfolio personal y CV de desarrollador"
+>
+  <Hero
+    name={personalInfo.name}
+    title={personalInfo.title}
+    description={personalInfo.description}
+    image={personalInfo.image}
+  />
+
+  <Skills skills={skills} />
+
+  <section class="text-white px-4 sm:px-6 lg:px-8 py-12 mt-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-gray-800 rounded-lg shadow-md p-5 mb-5 border-l-4 border-indigo-400">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+          <!-- Contenido principal (3/4) -->
+          <div class="lg:col-span-3">
+            <h3 class="text-2xl font-semibold text-white mb-3">
+              ¿Interesado en trabajar conmigo?
+            </h3>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <span class="text-indigo-400 font-bold mr-2 mt-1 text-xs">→</span>
+                <span class="text-gray-300">
+                  Estoy siempre abierto a nuevas oportunidades y proyectos interesantes que representen un desafío profesional.
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-400 font-bold mr-2 mt-1 text-xs">→</span>
+                <span class="text-gray-300">
+                  Disponible para proyectos de desarrollo web, aplicaciones full-stack y soluciones tecnológicas innovadoras.
+                </span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-indigo-400 font-bold mr-2 mt-1 text-xs">→</span>
+                <span class="text-gray-300">
+                  Enfoque en colaboración efectiva, metodologías ágiles y entrega de resultados de alta calidad.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Información lateral (1/4) -->
+		  <div class="lg:col-span-1 space-y-3 flex flex-col justify-center items-center">
+			<!-- Call to Action -->
+			<div class="bg-gray-700 p-3 rounded-lg text-center w-full">
+			  <a
+				href="/contact"
+				class="inline-block bg-gradient-to-r from-indigo-500 to-indigo-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-lg text-sm"
+			  >
+				Contáctame
+			  </a>
+			</div>
+		  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

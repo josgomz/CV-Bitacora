@@ -1,43 +1,83 @@
-# Astro Starter Kit: Minimal
+# CV/Portfolio con Astro
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Un sitio web de CV y portfolio personal construido con Astro, TypeScript y CSS moderno.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Características
 
-## 🚀 Project Structure
+- ⚡ **Súper rápido** - Construido con Astro para máximo rendimiento
+- � **Responsive** - Diseño adaptable a todos los dispositivos
+- 🎨 **Moderno** - Interfaz limpia y profesional
+- ♿ **Accesible** - Siguiendo las mejores prácticas de accesibilidad
+- 🔧 **TypeScript** - Tipado estático para mejor desarrollo
+- 📄 **SEO optimizado** - Meta tags y estructura semántica
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🏗️ Estructura del Proyecto
 
 ```text
 /
-├── public/
+├── public/                 # Archivos estáticos
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/         # Componentes reutilizables
+│   │   ├── Hero.astro
+│   │   └── Skills.astro
+│   ├── layouts/           # Layouts de página
+│   │   └── Layout.astro
+│   └── pages/             # Páginas del sitio
+│       ├── index.astro    # Página principal
+│       ├── about.astro    # Sobre mí
+│       ├── bitacora.astro # Bitácora
+│       └── contact.astro  # Contacto
+├── .github/
+│   └── copilot-instructions.md
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se ejecutan desde la raíz del proyecto en una terminal:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando                   | Acción                                      |
+| :------------------------ | :------------------------------------------ |
+| `npm install`             | Instala las dependencias                   |
+| `npm run dev`             | Inicia servidor de desarrollo en `localhost:4321` |
+| `npm run build`           | Construye el sitio para producción en `./dist/` |
+| `npm run preview`         | Vista previa del build localmente antes de desplegar |
 
-## 🧞 Commands
+## 🎨 Personalización
 
-All commands are run from the root of the project, from a terminal:
+### Información Personal
+Edita los siguientes archivos para personalizar tu información:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. **`src/pages/index.astro`** - Información principal y habilidades
+2. **`src/pages/about.astro`** - Experiencia y educación
+3. **`src/pages/bitacora.astro`** - Tu bitácora personal
+4. **`src/pages/contact.astro`** - Información de contacto
 
-## 👀 Want to learn more?
+### Imágenes
+Coloca tus imágenes en la carpeta `public/` y actualiza las referencias:
+- `placeholder-avatar.jpg` - Tu foto de perfil
+- `project-placeholder.jpg` - Imágenes de proyectos
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Estilos
+Los estilos están incluidos en cada componente usando CSS scoped de Astro. Puedes:
+- Modificar los colores en las variables CSS
+- Ajustar el layout y espaciado
+- Agregar nuevos componentes y estilos
+
+## � Despliegue
+
+Este proyecto está listo para ser desplegado en:
+- [Netlify](https://netlify.com)
+- [Vercel](https://vercel.com)
+- [GitHub Pages](https://pages.github.com)
+- [Railway](https://railway.app)
+
+Simplemente conecta tu repositorio y el sitio se construirá automáticamente.
+
+## 🤝 Contribuciones
+
+Las contribuciones, problemas y solicitudes de características son bienvenidas.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT.

@@ -1,0 +1,10 @@
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font-family: 'Segoe UI', sans-serif; font-weight: bold; font-size: 90px; }
+    .bg { fill: #0d1117; }
+    .fg { fill: #58a6ff; }
+  </style>
+  <rect width="200" height="200" class="bg"/>
+  <text x="30" y="140" class="text fg">JG</text>
+</svg>

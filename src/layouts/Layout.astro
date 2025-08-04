@@ -1,0 +1,114 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Mi CV y Portfolio personal" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-gradient-to-r text-white">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          <!-- Logo or site title (optional) -->
+          <a href="/" class="text-lg font-bold text-white">Mi Portfolio</a>
+          <!-- Desktop navigation -->
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="/"
+              class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+              >Inicio</a
+            >
+            <a
+              href="/about"
+              class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+              >Sobre mí</a
+            >
+            <a
+              href="/bitacora"
+              class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+              >Bitácora</a
+            >
+            <a
+              href="/contact"
+              class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+              >Contacto</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Abrir menú"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile navigation menu -->
+        <div
+          id="mobile-menu"
+          class="md:hidden mt-2 hidden flex-col gap-2 bg-gradient-to-r rounded-lg p-4"
+        >
+          <a
+            href="/"
+            class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            >Inicio</a
+          >
+          <a
+            href="/about"
+            class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            >Sobre mí</a
+          >
+          <a
+            href="/bitacora"
+            class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            >Bitácora</a
+          >
+          <a
+            href="/contact"
+            class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
+            >Contacto</a
+          >
+        </div>
+        <script type="text/javascript" is:inline>
+          const btn = document.getElementById("mobile-menu-button");
+          const menu = document.getElementById("mobile-menu");
+          btn?.addEventListener("click", () => {
+            menu?.classList.toggle("hidden");
+          });
+        </script>
+      </nav>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+      <slot />
+    </main>
+
+    <footer class="text-white text-center py-4 mt-auto">
+      <p>&copy; 2025 Mi Portfolio. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

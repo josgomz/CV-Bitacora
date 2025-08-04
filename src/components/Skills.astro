@@ -1,0 +1,82 @@
+---
+export interface Skill {
+  name: string;
+  level: number; // 1-5
+  category: string;
+}
+
+export interface Props {
+  skills: Skill[];
+}
+
+const { skills } = Astro.props;
+
+// Agrupar skills por categoría
+const skillsByCategory = skills.reduce(
+  (acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  },
+  {} as Record<string, Skill[]>
+);
+---
+
+<section class="my-12">
+  <h2 class="text-3xl mb-8 text-white text-center font-bold">Habilidades Técnicas</h2>
+
+  {
+    Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+      <div class="mb-8">
+        <h3 class="text-xl text-white mb-4 pb-2 border-b-2 border-indigo-400">{category}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {categorySkills.map((skill) => (
+            <div class="bg-gray-800 rounded-lg shadow-md p-5 mb-5 border-l-4 border-indigo-500">
+              <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                <!-- Contenido principal (3/4) -->
+                <div class="lg:col-span-3">
+                  <h3 class="text-xl font-semibold text-white mb-3">
+                    {skill.name}
+                  </h3>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex items-start">
+                      <span class="text-indigo-400 font-bold mr-2 mt-1 text-xs">→</span>
+                      <span class="text-gray-300">
+                        Experiencia práctica en proyectos reales
+                      </span>
+                    </div>
+                    <div class="mb-3">
+                      <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div
+                          class="h-full bg-gradient-to-r from-indigo-500 to-indigo-700 rounded-full transition-all duration-300"
+                          style={`width: ${skill.name === "Inglés (B2)" ? (skill.level / 6) * 100 : (skill.level / 5) * 100}%`}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Información lateral (1/4) -->
+                <div class="lg:col-span-1 space-y-3">
+                  <!-- Nivel -->
+                  <div class="bg-gray-700 p-3 rounded-lg">
+                    <h5 class="font-semibold text-indigo-300 mb-1 text-sm">Nivel</h5>
+                    <p class="text-white text-sm font-medium">
+                      {skill.name === "Inglés (B2)"
+                        ? `${skill.level}/6`
+                        : `${skill.level}/5`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+
