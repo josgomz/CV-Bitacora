@@ -1,11 +1,12 @@
 ---
+import { getAssetPath, getPagePath } from '../utils/paths';
+
 export interface Props {
   title: string;
   description?: string;
 }
 
 const { title, description = "Mi CV y Portfolio personal" } = Astro.props;
-import { getAssetPath } from '../utils/paths';
 ---
 
 <!doctype html>
@@ -23,26 +24,26 @@ import { getAssetPath } from '../utils/paths';
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo or site title (optional) -->
-          <a href="/" class="text-lg font-bold text-white">Mi Portfolio</a>
+          <a href={getPagePath('/')} class="text-lg font-bold text-white">Mi Portfolio</a>
           <!-- Desktop navigation -->
           <div class="hidden md:flex items-center gap-8">
             <a
-              href="/"
+              href={getPagePath('/')}
               class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
               >Inicio</a
             >
             <a
-              href="/about"
+              href={getPagePath('/about')}
               class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
               >Sobre mí</a
             >
             <a
-              href="/bitacora"
+              href={getPagePath('/bitacora')}
               class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
               >Bitácora</a
             >
             <a
-              href="/contact"
+              href={getPagePath('/contact')}
               class="nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
               >Contacto</a
             >
@@ -73,22 +74,22 @@ import { getAssetPath } from '../utils/paths';
           class="md:hidden mt-2 hidden flex-col gap-2 bg-gradient-to-r rounded-lg p-4"
         >
           <a
-            href="/"
+            href={getPagePath('/')}
             class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
             >Inicio</a
           >
           <a
-            href="/about"
+            href={getPagePath('/about')}
             class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
             >Sobre mí</a
           >
           <a
-            href="/bitacora"
+            href={getPagePath('/bitacora')}
             class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
             >Bitácora</a
           >
           <a
-            href="/contact"
+            href={getPagePath('/contact')}
             class="block nav-link hover:text-green-200 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-white/10"
             >Contacto</a
           >
